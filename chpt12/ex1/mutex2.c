@@ -8,13 +8,11 @@ EXPORT_SYMBOL(foo);
 static int __init my_init(void)
 {
 	pr_info("Checking if mutex locked\n");
-	if (mutex_is_locked(&foo) == 1){
-		pr_info("Mutex locked\n");
-	} else {
-		pr_info("Mutex unlocked\n");
-		pr_info("Attempting lock\n");
-		mutex_lock(&foo);
-	}
+	if (!mutex_trylock(&foo)){
+		pr_info("Failed getting lock in: %s\n", KBUILD_MODNAME);
+		return -EPERM;
+	};
+	pr_info("Mutex locked? %d\n", mutex_is_locked(&foo));
 	return 0;
 }
 
