@@ -4,6 +4,8 @@
 #include <linux/slab.h>
 #include <linux/init.h>
 
+/*Playing around with the list head macro to more safely create and navigate linked list data structure*/
+
 LIST_HEAD(my_list);
 
 struct my_entry {

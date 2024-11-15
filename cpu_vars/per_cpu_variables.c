@@ -2,7 +2,7 @@
 #include <linux/init.h>
 #include <linux/percpu.h>
 
- /** Trivial module that creates per-cpu variables, and modifies*/
+ /** Module that creates per-cpu variables, and modifies*/
  /** and prints out their values.*/
 
 static DEFINE_PER_CPU(long, cpuvar) = 10;

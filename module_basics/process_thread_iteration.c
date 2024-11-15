@@ -5,6 +5,7 @@
 #include <linux/version.h>
 
 /*Module that iterates over the threads of a process*/
+/*Feels slightly easier than having to iterate over each process then iterate over each process' threads*/
 
 static int __init my_init(void)
 {

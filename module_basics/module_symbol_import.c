@@ -1,6 +1,8 @@
 #include <linux/module.h>
 #include <linux/init.h>
 
+/*Import the symbol exported by other module*/
+
 extern int foo;
 
 static int __init my_init(void)
